@@ -97,7 +97,7 @@ function openSetup() {
 }
 function closeSetup() {
   setupBlock.classList.add('hidden');
-  window.removeEventListener('keydown', closeSetupByEscHandler)
+  window.removeEventListener('keydown', closeSetupByEscHandler);
 }
 function closeSetupByEscHandler(e) {
   if (e.keyCode === 27) {
@@ -115,7 +115,9 @@ function closeByEnterHandler(e) {
   }
 }
 function sendForm() {
-  if (!setupName.validity.valid) return;
+  if (!setupName.validity.valid) {
+    return;
+  }
   setupForm.submit();
 }
 function submitClickHandler(e) {
@@ -143,12 +145,12 @@ function changeElementProperty(el, property, arr, input) {
   input.value = elValue;
 }
 
-setupWizardCoat.addEventListener('click', function() {
+setupWizardCoat.addEventListener('click', function () {
   changeElementProperty(setupWizardCoat, 'fill', coatColors, setupInputCoat);
 });
-setupWizardEyes.addEventListener('click', function() {
-  changeElementProperty(setupWizardEyes, 'fill',eyesColors, setupInputEyes);
+setupWizardEyes.addEventListener('click', function () {
+  changeElementProperty(setupWizardEyes, 'fill', eyesColors, setupInputEyes);
 });
-setupWizardFireball.addEventListener('click', function() {
+setupWizardFireball.addEventListener('click', function () {
   changeElementProperty(setupWizardFireball, 'backgroundColor', fireballColors, setupInputFireball);
 });
