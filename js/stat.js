@@ -81,7 +81,8 @@ function renderHistogram(ctx, names, times) {
     var positionX = histogram.position.x + (bar.width + bar.gap) * i;
     var barHeight = time / maxTime * histogram.height;
     var positionY = histogram.position.y - barHeight;
-    var barColor = names[i] === 'Вы' ? bar.color.player : 'rgba(' + bar.color.main + ',' + Math.random().toFixed(2) + ')';
+    var randomOpacity = 0.3 + Math.random() * 0.7;
+    var barColor = names[i] === 'Вы' ? bar.color.player : 'rgba(' + bar.color.main + ',' + randomOpacity.toFixed(2) + ')';
 
     ctx.fillStyle = barColor;
     ctx.fillRect(positionX, positionY, bar.width, barHeight);
