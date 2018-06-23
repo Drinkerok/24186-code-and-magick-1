@@ -10,7 +10,8 @@
     if (!setupName.validity.valid) {
       return;
     }
-    setupForm.submit();
+
+    window.backend.save(new FormData(setupForm), onSendSuccess, onSendFail);
   }
   function submitClickHandler(e) {
     e.preventDefault();
@@ -22,7 +23,11 @@
     }
   }
 
-
+  var onSendSuccess = function () {
+    window.setupMethods.close();
+  };
+  var onSendFail = function () {
+  };
   setupSubmit.addEventListener('click', submitClickHandler);
   setupSubmit.addEventListener('keydown', sendFormByEnterHandler);
 })();
