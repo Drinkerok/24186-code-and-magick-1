@@ -5,12 +5,16 @@
   var wizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
   var wizardsFragment = document.createDocumentFragment();
 
-  var renderWizards = function (wizardsArr, renderElement) {
+  var similarBlock = document.querySelector('.setup-similar');
+  var similarList = similarBlock.querySelector('.setup-similar-list');
+
+  var renderWizards = function (wizardsArr) {
     for (var i = 0; i < wizardsArr.length; i++) {
       renderWizard(wizardsArr[i]);
     }
 
-    renderElement.appendChild(wizardsFragment);
+    similarList.appendChild(wizardsFragment);
+    similarBlock.classList.remove('hidden');
   };
 
   function renderWizard(wizard) {

@@ -37,4 +37,10 @@
   setupCloseButton.addEventListener('click', closeSetup);
   setupCloseButton.addEventListener('keydown', closeByEnterHandler);
   setupIcon.addEventListener('keydown', openByEnterHandler);
+
+
+  window.setupMethods = {
+    open: openSetup,
+    close: closeSetup,
+  };
 })();
