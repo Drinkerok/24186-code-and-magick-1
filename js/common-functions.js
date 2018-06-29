@@ -52,8 +52,18 @@
   };
 
 
+  var DEBOUNCE_INTERVAL = 300;
+  var debounceTimeout;
+  var debounce = function (fun) {
+    if (debounceTimeout) {
+      clearTimeout(debounceTimeout);
+    }
+    debounceTimeout = setTimeout(fun, DEBOUNCE_INTERVAL);
+  };
+
   window.commonFunctions = {
     getRandomArrayElement: getRandomArrayElement,
     dragElement: dragElement,
+    debounce: debounce,
   };
 })();

@@ -16,6 +16,14 @@
     var elValue = commonFunctions.getRandomArrayElement(arr);
     el.style[property] = elValue;
     input.value = elValue;
+
+    window.commonFunctions.debounce(renderWithValuews);
+  }
+  function renderWithValuews() {
+    window.renderWizards({
+      coatColor: setupInputCoat.value,
+      eyesColor: setupInputEyes.value,
+    });
   }
 
 

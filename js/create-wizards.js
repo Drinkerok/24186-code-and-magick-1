@@ -5,10 +5,8 @@
   var vars = window.vars;
   var commonFunctions = window.commonFunctions;
 
-  var WIZARDS_MAX_COUNT = 4;
-
   var createWizards = function (wizardsObj) {
-    for (var i = 0; i < Math.min(wizardsObj.length, WIZARDS_MAX_COUNT); i++) {
+    for (var i = 0; i < wizardsObj.length; i++) {
       var wizardData = wizardsObj[i];
 
       var wizard = {
@@ -19,8 +17,9 @@
 
       wizards.push(wizard);
     }
+    window.wizards = wizards;
 
-    window.renderWizards(wizards);
+    window.renderWizards();
   };
 
   var wizardsLoadFail = function () {
